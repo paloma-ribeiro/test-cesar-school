@@ -10,18 +10,13 @@ def ask_name_object() -> str:
     return name
 
 
-def validate_name_object(name_object: str):
-    x = True
-
-    while x:
-
-        if 4 < len(name_object) < 8:
+def validate_name_object() -> str:
+    while True:
+        text = ask_name_object()
+        if 4 <= len(text) <= 8:
             print('Palavra válida')
-            break
-        else:
-            print('Palavra inválida')
-            continue
+            return text
+        print('Palavra inválida')
 
 
-name_obj = ask_name_object()
-validate_name_object(name_obj)
+validate_name_object()
